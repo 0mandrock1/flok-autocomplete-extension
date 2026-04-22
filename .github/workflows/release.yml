@@ -1,0 +1,24 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Package extension
+        run: zip flok-autocomplete-${{ github.ref_name }}.zip manifest.json content.js
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: flok-autocomplete-${{ github.ref_name }}.zip
+          generate_release_notes: true
