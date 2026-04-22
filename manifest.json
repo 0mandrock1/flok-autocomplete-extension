@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Flok Hydra + Strudel Autocomplete (Chain-aware + Audio)",
+  "version": "0.3",
+  "description": "Chain-aware + audio reactive autocomplete for Hydra + Strudel on flok.cc",
+  "content_scripts": [
+    {
+      "matches": ["https://flok.cc/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    }
+  ],
+  "permissions": []
+}

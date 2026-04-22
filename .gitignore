@@ -1,0 +1,13 @@
+# Claude Code local files
+CLAUDE.local.md
+.claude/settings.local.json
+.mcp.local.json
+
+# Temporary and debug files
+temp/
+temp-*/
+test-*/
+debug-*.js
+test-*.js
+*-test.js
+*-debug.js
